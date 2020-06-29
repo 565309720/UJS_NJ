@@ -1,0 +1,14 @@
+oled.c:126:6:oled_Init	8	static
+oled.c:209:6:IIC_delayus	24	static
+oled.c:217:6:IIC_start	8	static
+oled.c:228:6:IIC_stop	8	static
+oled.c:239:6:IIC_writebyte	24	static
+oled.c:267:6:IIC_writecmd	16	static
+oled.c:276:6:IIC_writedata	16	static
+oled.c:286:6:oled_Set_Pos	16	static
+oled.c:295:6:oled_CLS	16	static
+oled.c:315:6:oled_ShowChar	24	static
+oled.c:346:6:oled_ShowString	24	static
+oled.c:363:15:oled_pow	24	static
+oled.c:379:6:oled_ShowNum	24	static
+oled.c:390:5:oled_iprintf	56	dynamic

@@ -1,0 +1,6 @@
+SPI_FLASH.c:12:6:SPI_INIT	32	static
+SPI_FLASH.c:47:6:SPI_write	24	static
+SPI_FLASH.c:64:6:SPI_writeStr	24	static
+SPI_FLASH.c:96:6:WREN	8	static
+SPI_FLASH.c:109:6:ERDI	8	static
+SPI_FLASH.c:123:5:SPI_iprintf	52	dynamic

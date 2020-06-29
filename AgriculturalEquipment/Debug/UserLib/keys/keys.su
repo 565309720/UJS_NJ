@@ -1,0 +1,11 @@
+keys.c:22:6:EC11_init	16	static
+keys.c:155:6:it_init	16	static
+keys.c:191:6:E1_turn_left	16	static
+keys.c:199:6:E1_turn_right	16	static
+keys.c:208:6:E2_turn_left	16	static
+keys.c:216:6:E2_turn_right	16	static
+keys.c:221:6:EXTI0_IRQHandler	8	static
+keys.c:228:6:EXTI1_IRQHandler	8	static
+keys.c:234:6:EXTI2_IRQHandler	8	static
+keys.c:252:6:EXTI9_5_IRQHandler	8	static
+keys.c:264:6:EXTI15_10_IRQHandler	8	static
