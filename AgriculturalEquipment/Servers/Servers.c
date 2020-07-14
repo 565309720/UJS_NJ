@@ -1,7 +1,7 @@
 /*
  * Servers.c
  *
- *  Created on: 2020Äê4ÔÂ26ÈÕ
+ *  Created on: 2020脛锚4脭脗26脠脮
  *      Author: WangXiang
  */
 #include "Servers.h"
@@ -20,13 +20,13 @@ extern char CANerr;
 extern char GPSerr;
 ID_INFO ID_INFOs;
 
-extern char receives[15][10][100]; //��֧��19��ָ��(1~19)[0��������],ÿ��ָ��ɽ���5��������Ϣ(0~4),ÿ��������Ϣ�����98(0~97)[99��Ϊ������Ϣ�������ݼ�¼λ]
+extern char receives[15][10][100]; //锟斤拷支锟斤拷19锟斤拷指锟斤拷(1~19)[0锟斤拷锟斤拷锟斤拷锟斤拷],每锟斤拷指锟斤拷山锟斤拷锟�5锟斤拷锟斤拷锟斤拷锟斤拷息(0~4),每锟斤拷锟斤拷锟斤拷锟斤拷息锟斤拷锟斤拷锟筋长98(0~97)[99锟斤拷为锟斤拷锟斤拷锟斤拷息锟斤拷锟斤拷锟斤拷锟捷硷拷录位]
 extern uint8_t x_axis, y_axis, cmd_axis;
 //static int time_count = 0;
 extern int count;
 
 /*
- * ����CAN�������ݰ���ID�����ݸ�ʽ
+ * 锟斤拷锟斤拷CAN锟斤拷锟斤拷锟斤拷锟捷帮拷锟斤拷ID锟斤拷锟斤拷锟捷革拷式
  */
 void Analysys(CanRxMsg CANRX)
 {
@@ -49,7 +49,7 @@ void Analysys(CanRxMsg CANRX)
 }
 
 /*
- * �������ݰ�ID�е�Pri
+ * 锟斤拷锟斤拷锟斤拷锟捷帮拷ID锟叫碉拷Pri
  */
 uint8_t set_Pri(uint32_t id)
 {
@@ -66,9 +66,9 @@ uint8_t set_Pri(uint32_t id)
 }
 
 /*
- * �������ݰ���ID
- * Pack_No:	�����,��Ӧ�ڼ������ݰ�,�������������ݽ������ڼ����ṹ����,��ӦEXCEL�����������(1~7)
- * CANRX:	���յ�CAN�������ݽṹ��
+ * 锟斤拷锟斤拷锟斤拷锟捷帮拷锟斤拷ID
+ * Pack_No:	锟斤拷锟斤拷锟�,锟斤拷应锟节硷拷锟斤拷锟斤拷锟捷帮拷,锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟捷斤拷锟斤拷锟斤拷锟节硷拷锟斤拷锟结构锟斤拷锟斤拷,锟斤拷应EXCEL锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟�(1~7)
+ * CANRX:	锟斤拷锟秸碉拷CAN锟斤拷锟斤拷锟斤拷锟捷结构锟斤拷
  */
 void Analysys_ID(uint8_t Pack_NO, CanRxMsg CANRX)
 {
@@ -95,7 +95,7 @@ void Analysys_ID(uint8_t Pack_NO, CanRxMsg CANRX)
 }
 
 /*
- * ����EXCEL���������˳�򷵻����ǵڼ�������,����ʹ�ò�ͬ�������н�������
+ * 锟斤拷锟斤拷EXCEL锟斤拷锟斤拷锟斤拷锟斤拷锟剿筹拷蚍祷锟斤拷锟斤拷堑诩锟斤拷锟斤拷锟斤拷锟�,锟斤拷锟斤拷使锟矫诧拷同锟斤拷锟斤拷锟斤拷锟叫斤拷锟斤拷锟斤拷锟斤拷
  */
 uint8_t get_pack_currentPack(CanRxMsg CANRX)
 {
@@ -114,11 +114,11 @@ uint8_t get_pack_currentPack(CanRxMsg CANRX)
 }
 
 /*
- * ��������
- * Pack_No:	ʹ�õڼ�����ʽ���,��ͬ��ŵ����ݰ���Ӧ��ͬ�����ݽ�����ʽ
- * CANRX:	���յ�CAN�������ݰ�
+ * 锟斤拷锟斤拷锟斤拷锟斤拷
+ * Pack_No:	使锟矫第硷拷锟斤拷锟斤拷式锟斤拷锟�,锟斤拷同锟斤拷诺锟斤拷锟斤拷莅锟斤拷锟接︼拷锟酵拷锟斤拷锟斤拷萁锟斤拷锟斤拷锟绞�
+ * CANRX:	锟斤拷锟秸碉拷CAN锟斤拷锟斤拷锟斤拷锟捷帮拷
  *
- * !!ʹ��ǰ��Ҫ�Ƚ�Mail_Box����,����ATW��true!!
+ * !!使锟斤拷前锟斤拷要锟饺斤拷Mail_Box锟斤拷锟斤拷,锟斤拷锟斤拷ATW锟斤拷true!!
  */
 void Analysys_DATA(uint8_t Pack_NO, CanRxMsg CANRX)
 {
@@ -279,9 +279,9 @@ bool check_receives(uint8_t cmd_number, char *cmd)
 
 void BC28_RESET()
 {
-	digitalWriteB(GPIO_Pin_5, HIGH);
-	delay_us(3000000);
 	digitalWriteB(GPIO_Pin_5, LOW);
+	delay_us(3000000);
+	digitalWriteB(GPIO_Pin_5, HIGH);
 	NVIC_SystemReset();
 }
 
@@ -291,18 +291,18 @@ void BC28_Init()
 	y_axis = 0;
 	x_axis = 0;
 	cmd_axis = 0;
-	send_cmd("ATE0 \r\n");	//�ڶ���ָ��
+	send_cmd("ATE0 \r\n");	//锟节讹拷锟斤拷指锟斤拷
 	delay_us(1000000);
-	while (!check_receives(1, "OK"))	//���ָ��2���ص��������Ƿ����"ok"
+	while (!check_receives(1, "OK"))	//锟斤拷锟街革拷锟�2锟斤拷锟截碉拷锟斤拷锟斤拷锟斤拷锟角凤拷锟斤拷锟�"ok"
 	{
 		;
 	}
 
 	send_cmd(
-	        "AT+QMTCFG=\"aliauth\",0,\"a1f2CH9BSx7\",\"ZRH_4G\",\"TEnbrWdkBXfLkca73A9Nhyzqe9o19HM6\" \r\n");//�ڶ���ָ��
+	        "AT+QMTCFG=\"aliauth\",0,\"a1f2CH9BSx7\",\"ZRH_4G\",\"TEnbrWdkBXfLkca73A9Nhyzqe9o19HM6\" \r\n");//锟节讹拷锟斤拷指锟斤拷
 	delay_us(1000000);	//1s
 
-	send_cmd("AT+QMTOPEN=0,\"iot-as-mqtt.cn-shanghai.aliyuncs.com\",1883 \r\n");	//�ڶ���ָ��
+	send_cmd("AT+QMTOPEN=0,\"iot-as-mqtt.cn-shanghai.aliyuncs.com\",1883 \r\n");	//锟节讹拷锟斤拷指锟斤拷
 	delay_us(1000000);	//1s
 
 	if (check_receives(3, "ERROR"))
@@ -324,9 +324,9 @@ void BC28_Init()
 	}
 //	delay_us(1000000);	//1s
 
-	send_cmd("AT+QMTCONN=0,\"ZRH_4G\" \r\n");	//�ڶ���ָ��
+	send_cmd("AT+QMTCONN=0,\"ZRH_4G\" \r\n");	//锟节讹拷锟斤拷指锟斤拷
 	delay_us(5000000);	//1s
-	if (check_receives(4, "ERROR"))	//���ָ��2���ص��������Ƿ����"ok"
+	if (check_receives(4, "ERROR"))	//锟斤拷锟街革拷锟�2锟斤拷锟截碉拷锟斤拷锟斤拷锟斤拷锟角凤拷锟斤拷锟�"ok"
 	{
 		BC28_RESET();
 	}
@@ -334,7 +334,7 @@ void BC28_Init()
 	{
 		BC28_RESET();
 	}
-	cmd_axis = 12;	//ʹ��12���������Ƿ��ͳɹ���
+	cmd_axis = 12;	//使锟斤拷12锟斤拷锟斤拷锟斤拷锟斤拷锟角凤拷锟酵成癸拷锟斤拷
 	printf("AT+QMTPUB=0,0,0,1,\"/a1f2CH9BSx7/ZRH_4G/user/put\" \r\n");
 	delay_us(100000);	//0.1s
 	x_axis = 0;
@@ -344,7 +344,7 @@ void BC28_Init()
 	delay_us(500000);	//0.5s
 	while (!check_receives(12, "+QMTPUB: 0,0,0"))
 	{
-		if (check_receives(12, "ERROR"))	//���ָ��2���ص��������Ƿ����"ok"
+		if (check_receives(12, "ERROR"))	//锟斤拷锟街革拷锟�2锟斤拷锟截碉拷锟斤拷锟斤拷锟斤拷锟角凤拷锟斤拷锟�"ok"
 		{
 			for (int i = 0; i < 10; i++)
 			{
@@ -382,7 +382,7 @@ void pack_to_aliyun()
 	delay_us(500000);	//0.5s
 	while (!check_receives(12, "+QMTPUB: 0,0,0"))
 	{
-		if (check_receives(12, "ERROR"))	//���ָ��2���ص��������Ƿ����"ok"
+		if (check_receives(12, "ERROR"))	//锟斤拷锟街革拷锟�2锟斤拷锟截碉拷锟斤拷锟斤拷锟斤拷锟角凤拷锟斤拷锟�"ok"
 		{
 			for (int i = 0; i < 10; i++)
 			{
