@@ -106,7 +106,7 @@ int main(void)
 	delay_us(12000000);	//15s
 	usart_1_init(115200);
 //	printf("ok");
-//	IWDG_Config(IWDG_Prescaler_256, 4095);
+	IWDG_Config(IWDG_Prescaler_256, 4095);
 	BC28_Init();
 	CAN_INIT();	//锟斤拷始锟斤拷CAN锟斤拷锟斤拷
 	CAN_IT_INIT();	//锟斤拷始锟斤拷CAN锟斤拷锟斤拷锟叫讹拷
@@ -164,7 +164,7 @@ int main(void)
 		pack_to_aliyun();
 
 		IWDG_Feed();
-		for(int i=0;i<3600;i++)
+		for(int i=0;i<3000;i++)
 		{
 			delay_us(1000000);
 			IWDG_Feed();

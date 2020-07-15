@@ -351,7 +351,7 @@ void BC28_Init()
 				for (int j = 0; j < 99; j++)
 					receives[12][i][j] = '\0';
 			}
-			BC28_Init();
+			BC28_RESET();
 			break;
 		}
 	}
@@ -389,6 +389,7 @@ void pack_to_aliyun()
 				for (int j = 0; j < 99; j++)
 					receives[12][i][j] = '\0';
 			}
+			digitalWriteC(GPIO_Pin_14, HIGH);
 			BC28_Init();
 			break;
 		}
